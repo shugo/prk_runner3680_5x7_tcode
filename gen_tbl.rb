@@ -6,6 +6,6 @@ h = KANJI.each_char.with_index.with_object({}) { |(c, i), h|
   end
 }
 
-s = h.inspect.delete(" ")
+s = h.inspect.gsub(/ /, "\n")
 puts s
-puts s.size
+
