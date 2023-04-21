@@ -12,7 +12,7 @@ kbd.add_layer :default, %i[
     KC_TAB   KC_TAB   KC_Q     KC_W     KC_E     KC_R     KC_T         KC_Y     KC_U     KC_I     KC_O     KC_P     KC_LBRACKET  KC_RBRACKET
     KC_LCTL  KC_LCTL  KC_A     KC_S     KC_D     KC_F     KC_G         KC_H     KC_J     KC_K     KC_L     KC_SCOLON  KC_QUOTE  KC_BSLASH
     KC_PGUP  KC_LSFT  KC_Z     KC_X     KC_C     KC_V     KC_B         KC_N     KC_M     KC_COMMA  KC_DOT   KC_SLASH  KC_ENTER  KC_RSFT
-    KC_PGDOWN  TOGGLE_TC   KC_LGUI  KC_LALT  KC_LGUI  LOWER    KC_SPACE       KC_BSPACE  RAISE    KC_INSERT   KC_HOME  KC_END   KC_DELETE   KC_RCTL
+    KC_PGDOWN  KC_TCTG   KC_LGUI  KC_LALT  KC_LGUI  LOWER    KC_SPACE       KC_BSPACE  RAISE    KC_INSERT   KC_HOME  KC_END   KC_DELETE   KC_RCTL
 ]
 
 kbd.add_layer :tcode, %i[
@@ -20,10 +20,10 @@ kbd.add_layer :tcode, %i[
     KC_TAB   KC_TAB   KC_TC     KC_TC     KC_TC     KC_TC     KC_TC         KC_TC     KC_TC     KC_TC     KC_TC     KC_TC     KC_LBRACKET  KC_RBRACKET
     KC_LCTL  KC_LCTL  KC_TC     KC_TC     KC_TC     KC_TC     KC_TC         KC_TC     KC_TC     KC_TC     KC_TC     KC_TC  KC_QUOTE  KC_BSLASH
     KC_PGUP  KC_LSFT  KC_TC     KC_TC     KC_TC     KC_TC     KC_TC         KC_TC     KC_TC     KC_TC  KC_TC   KC_TC  KC_ENTER  KC_RSFT
-    KC_PGDOWN  TOGGLE_TC   KC_LGUI  KC_LALT  KC_LGUI  LOWER    KC_SPACE       KC_BSPACE  RAISE    KC_INSERT   KC_HOME  KC_END   KC_DELETE   KC_RCTL
+    KC_PGDOWN  KC_TCTG   KC_LGUI  KC_LALT  KC_LGUI  LOWER    KC_SPACE       KC_BSPACE  RAISE    KC_INSERT   KC_HOME  KC_END   KC_DELETE   KC_RCTL
 ]
 
-kbd.define_mode_key :TOGGLE_TC, [ Proc.new { kbd.default_layer = kbd.default_layer == :default ? :tcode : :default }, nil, 300, nil ]
+kbd.define_mode_key :KC_TCTG, [ Proc.new { kbd.default_layer = kbd.default_layer == :default ? :tcode : :default }, nil, 300, nil ]
 
 KANJI_TBL = {
   428=>'4ee3',468=>'5343',475=>'4ed8',536=>'5c71',547=>'65e5',548=>'56fd',
