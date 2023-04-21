@@ -6,6 +6,10 @@ h = KANJI.each_char.with_index.with_object({}) { |(c, i), h|
   end
 }
 
-s = h.inspect.gsub(/ /, "\n")
-puts s
-
+puts "KANJI_TBL = {"
+h.each_slice(6) do |row|
+  puts row.map { |k, v|
+    "#{k}=>'#{v}',"
+  }.join
+end
+puts "}"
